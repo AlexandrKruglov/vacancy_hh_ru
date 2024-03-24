@@ -26,7 +26,7 @@ class Vacancy:
             return (f'id: {self.id_vacancy}, {self.name} зарплата от {self.salary_from} \n'
                     f'{self.link}')
         return (f'id: {self.id_vacancy}, {self.name} зарплата от {self.salary_from} до {self.salary_to}\n'
-                f'{self.link}')
+                f'{self.link} , {self.schedule}')
 
     @classmethod
     def create_vacancy(cls, list_answer):

@@ -32,7 +32,3 @@ class ApiHhVacancy(ApiAbc):
         parms = {"text": name, "per_page": self.quantity, "area": 1, "only_with_salary": True}
         response = requests.get(self.url_get, parms)
         return response.json()
-
-
-vacansy_cls = ApiHhVacancy("name")  # создаем экземрляр класса ApiHhVacancy
-print(vacansy_cls.check_status_request())

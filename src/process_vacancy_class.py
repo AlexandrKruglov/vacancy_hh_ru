@@ -17,7 +17,8 @@ class Processing(ABC):
         pass
 
 
-class ProcessVacancy(Processing):
+class ProcessJsonVacancy(Processing):
+    """класс для работы json с файлом """
 
     @classmethod
     def add_vacancy(cls, dict_vacancy):
@@ -35,12 +36,12 @@ class ProcessVacancy(Processing):
     @classmethod
     def del_vacancy(cls, id_vacancy):
         """удаляем выбраную вакансию из файла"""
-        data_temp = ProcessVacancy.get_vacancy()
+        data_temp = ProcessJsonVacancy.get_vacancy()
         j = 0
         for i in data_temp["items"]:
             if id_vacancy == int(i["id"]):
                 data_temp["items"].pop(j)
-                ProcessVacancy.add_vacancy(data_temp)
+                ProcessJsonVacancy.add_vacancy(data_temp)
                 return "вакансия удалена"
             else:
                 j += 1
